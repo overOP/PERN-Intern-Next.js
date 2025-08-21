@@ -1,27 +1,13 @@
-"use client"
-import { navData } from '@/data/navdata'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { Button } from '@/components/ui/button'
+import { desktopProps } from '@/types/navbar'
 import React from 'react'
 
-const DesktopLinks = () => {
-  const pathname = usePathname()
-
+const DesktopLinks = ({text} : desktopProps) => {
   return (
-    <div className='hidden md:flex items-center space-x-8 Space'>
-      {navData.map(({ id, title, url }) => (
-        <Link
-          key={id}
-          href={url}
-          className={`text-button-xs ${
-            pathname === url 
-            ? "text-black dark:text-white" 
-            : "text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100"
-          }`}
-        >
-          {title}
-        </Link>
-      ))}
+    <div className='hidden md:block lg:flex items-center Space'>
+        <ul className='flex items-center gap-8'>
+            <Button className='text-text1 hover:text-text2 transition-colors duration-300'>{text}</Button>
+        </ul>
     </div>
   )
 }
