@@ -41,9 +41,7 @@ export default function RootLayout({
         >
           <header>
             <Notification/>
-            <div className="w-full max-w-[1140px] mx-auto">
               <NavBar/>
-            </div>
           </header>
           <main className="w-full max-w-[1140px] mx-auto">
             {children}

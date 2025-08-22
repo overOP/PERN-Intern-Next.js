@@ -23,3 +23,10 @@ export interface navBarProps {
     open: boolean;
     onToggle: () => void;
 }
+export interface mobileMenuProps {
+    onclose: () => void;
+    text: string;
+    shooping: string;
+    wishlist: string;
+    search: string;
+}
